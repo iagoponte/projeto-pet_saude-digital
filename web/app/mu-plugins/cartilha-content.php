@@ -111,7 +111,7 @@ add_action('init', function (): void {
             'auth_callback' => static function (
                 $allowed,
                 $meta_key,
-                $post_id
+                $post_id,
             ): bool {
                 return current_user_can('edit_post', $post_id);
             },
@@ -129,7 +129,7 @@ add_action('add_meta_boxes_material_educativo', function (): void {
         'ci_render_dados_material',
         'material_educativo',
         'normal',
-        'high'
+        'high',
     );
 });
 
@@ -140,7 +140,7 @@ function ci_render_dados_material(WP_Post $post): void
 {
     wp_nonce_field(
         'ci_salvar_dados_material',
-        'ci_dados_material_nonce'
+        'ci_dados_material_nonce',
     );
 
     $formato = get_post_meta($post->ID, '_ci_formato', true);
@@ -451,7 +451,7 @@ add_action('save_post_material_educativo', function (int $post_id): void {
         || !is_string($_POST['ci_dados_material_nonce'])
         || !wp_verify_nonce(
             sanitize_text_field(wp_unslash($_POST['ci_dados_material_nonce'])),
-            'ci_salvar_dados_material'
+            'ci_salvar_dados_material',
         )
     ) {
         return;
@@ -583,7 +583,7 @@ function ci_render_recurso_material_shortcode(): string
                 $path = (string) wp_parse_url($video_url, PHP_URL_PATH);
                 $is_direct_video = (bool) preg_match(
                     '/\.(mp4|webm|ogv)$/i',
-                    $path
+                    $path,
                 );
 
                 if ($is_direct_video) {
@@ -636,6 +636,5 @@ function ci_render_recurso_material_shortcode(): string
 
 add_shortcode(
     'ci_recurso_material',
-    'ci_render_recurso_material_shortcode'
+    'ci_render_recurso_material_shortcode',
 );
-

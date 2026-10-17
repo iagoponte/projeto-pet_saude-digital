@@ -7,6 +7,6 @@ add_action('wp_enqueue_scripts', function (): void {
         'cartilha-inteligente-style',
         get_stylesheet_uri(),
         [],
-        wp_get_theme()->get('Version')
+        wp_get_theme()->get('Version'),
     );
 });
