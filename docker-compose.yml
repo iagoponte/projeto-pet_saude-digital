@@ -1,0 +1,57 @@
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - .:/var/www/html
+      - bedrock_vendor:/var/www/html/vendor
+      - wordpress_core:/var/www/html/web/wp
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - cartilha_network
+
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html:ro
+      - wordpress_core:/var/www/html/web/wp:ro
+      - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - php
+    networks:
+      - cartilha_network
+
+  db:
+    image: mariadb:11.4
+    restart: unless-stopped
+    environment:
+      MARIADB_DATABASE: ${DB_NAME:?Defina DB_NAME no .env}
+      MARIADB_USER: ${DB_USER:?Defina DB_USER no .env}
+      MARIADB_PASSWORD: ${DB_PASSWORD:?Defina DB_PASSWORD no .env}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?Defina DB_ROOT_PASSWORD no .env}
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    networks:
+      - cartilha_network
+
+volumes:
+  bedrock_vendor:
+  wordpress_core:
+  mariadb_data:
+
+networks:
+  cartilha_network:
+    driver: bridge

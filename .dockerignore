@@ -1,0 +1,13 @@
+.git
+.env
+.env.*
+!.env.example
+
+vendor/
+web/wp/
+
+web/app/uploads/*
+web/app/cache/*
+*.log
+
+node_modules/

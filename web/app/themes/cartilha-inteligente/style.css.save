@@ -1,0 +1,65 @@
+/*
+Theme Name: Cartilha Inteligente
+Theme URI: https://example.org/cartilha-inteligente
+Author: Equipe Cartilha Inteligente
+Description: Tema de blocos personalizado para materiais educativos em saúde.
+Version: 1.0.0
+Requires at least: 6.8
+Requires PHP: 8.3
+Text Domain: cartilha-inteligente
+*/
+/* Grid de materiais educativos */
+.wp-block-post-template-is-layout-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 24px;
+}
+
+/* Estrutura dos cards */
+.ci-material-card {
+    min-width: 0;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+}
+
+/* Imagem sem deformação */
+.ci-material-card .wp-block-post-featured-image img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/* Título: no máximo três linhas */
+.ci-material-card .wp-block-post-title {
+    overflow-wrap: anywhere;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+/* Resumo: no máximo quatro linhas */
+.ci-material-card .wp-block-post-excerpt__excerpt {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .wp-block-post-template-is-layout-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    .wp-block-post-template-is-layout-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+

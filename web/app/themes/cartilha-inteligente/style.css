@@ -1,0 +1,151 @@
+/*
+Theme Name: Cartilha Inteligente
+Theme URI: https://example.org/cartilha-inteligente
+Author: Equipe Cartilha Inteligente
+Description: Tema de blocos personalizado para materiais educativos em saúde.
+Version: 1.0.0
+Requires at least: 6.8
+Requires PHP: 8.3
+Text Domain: cartilha-inteligente
+*/
+
+/* Recursos dos materiais educativos */
+.ci-recurso-material {
+    margin-top: 32px;
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.ci-recurso-material iframe,
+.ci-recurso-material video,
+.ci-recurso-material audio {
+    display: block;
+    max-width: 100%;
+}
+
+.ci-recurso-material iframe,
+.ci-recurso-material video {
+    width: 100%;
+}
+
+.ci-recurso-material iframe {
+    aspect-ratio: 16 / 9;
+    height: auto;
+    min-height: 320px;
+    border: 0;
+}
+
+.ci-recurso-material .wp-audio-shortcode {
+    max-width: 100%;
+}
+
+.ci-transcricao {
+    margin-top: 20px;
+}
+
+.ci-transcricao summary {
+    cursor: pointer;
+    padding: 8px 0;
+    font-weight: 600;
+}
+
+.ci-botao-jogo {
+    display: inline-block;
+    max-width: 100%;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: #176B52;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.ci-botao-jogo:hover {
+    background: #125640;
+    color: #fff;
+}
+
+/* Foco visível para navegação por teclado */
+.ci-recurso-material a:focus-visible,
+.ci-recurso-material button:focus-visible,
+.ci-recurso-material summary:focus-visible,
+.ci-botao-jogo:focus-visible {
+    outline: 3px solid #125640;
+    outline-offset: 4px;
+}
+
+/* Prevenção de estouro de conteúdo */
+.ci-recurso-material *,
+.material-educativo__conteudo {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.material-educativo__conteudo img,
+.material-educativo__conteudo video,
+.material-educativo__conteudo iframe {
+    max-width: 100%;
+}
+
+/* Catálogo: títulos e descrições longos */
+.wp-block-post-title,
+.wp-block-post-excerpt {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.wp-block-post-featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 600px) {
+    .ci-recurso-material {
+        margin-top: 24px;
+    }
+
+    .ci-recurso-material iframe {
+        min-height: 220px;
+    }
+
+    .ci-botao-jogo {
+        box-sizing: border-box;
+        text-align: center;
+    }
+}
+
+
+/* Controle de texto nos cards do catálogo */
+.wp-block-post-excerpt {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.wp-block-post-excerpt__excerpt {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    overflow: hidden;
+}
+
+/* Evita que títulos extensos ultrapassem os cards */
+.wp-block-post-title {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+/* Impede que elementos internos excedam a largura disponível */
+.wp-block-post-template > li,
+.wp-block-post-template .wp-block-group {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+

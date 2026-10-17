@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "760px",
+      "wideSize": "1200px"
+    },
+    "color": {
+      "palette": [
+        {
+          "slug": "primary",
+          "name": "Verde principal",
+          "color": "#176B52"
+        },
+        {
+          "slug": "secondary",
+          "name": "Verde claro",
+          "color": "#DDF3E8"
+        },
+        {
+          "slug": "text",
+          "name": "Texto",
+          "color": "#24332D"
+        },
+        {
+          "slug": "background",
+          "name": "Fundo",
+          "color": "#FFFFFF"
+        }
+      ]
+    },
+    "typography": {
+      "fluid": true
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "#FFFFFF",
+      "text": "#24332D"
+    },
+    "typography": {
+      "fontFamily": "Arial, Helvetica, sans-serif",
+      "lineHeight": "1.6"
+    }
+  }
+}
