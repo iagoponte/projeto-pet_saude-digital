@@ -149,3 +149,290 @@ Text Domain: cartilha-inteligente
     box-sizing: border-box;
 }
 
+
+/* =========================================================
+   Cartilha Inteligente — página inicial
+   ========================================================= */
+
+.ci-home {
+    overflow: clip;
+}
+
+.ci-home-hero {
+    box-sizing: border-box;
+    padding: clamp(3rem, 7vw, 6rem) 1.25rem;
+    background: linear-gradient(
+        120deg,
+        #ddf3e8 0%,
+        #f2faf6 65%,
+        #ffffff 100%
+    );
+    border-bottom: 1px solid rgba(23, 107, 82, 0.12);
+}
+
+.ci-home-hero__inner {
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.ci-home-eyebrow {
+    margin-bottom: 0.75rem;
+    color: #176b52;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    line-height: 1.5;
+}
+
+.ci-home-title {
+    max-width: 850px;
+    margin-block: 0 1.25rem;
+    color: #24332d;
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    font-weight: 750;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+}
+
+.ci-home-description {
+    max-width: 700px;
+    margin-bottom: 1.5rem;
+    color: #40534a;
+    font-size: clamp(1rem, 1.6vw, 1.2rem);
+    line-height: 1.75;
+}
+
+.ci-home-search {
+    max-width: 700px;
+    margin-block: 1.5rem;
+}
+
+.ci-home-search .wp-block-search__inside-wrapper {
+    gap: 0.5rem;
+}
+
+.ci-home-search .wp-block-search__input {
+    min-width: 0;
+    min-height: 50px;
+    padding: 0.75rem 1rem;
+    border: 1px solid #b7d6c8;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #24332d;
+    font: inherit;
+}
+
+.ci-home-search .wp-block-search__button {
+    min-height: 50px;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid #176b52;
+    border-radius: 8px;
+    background: #176b52;
+    color: #ffffff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ci-home-search .wp-block-search__button:hover,
+.ci-home-search .wp-block-search__button:focus-visible {
+    background: #10533f;
+}
+
+.ci-home-actions {
+    margin-top: 1.25rem;
+}
+
+.ci-home .wp-block-button__link {
+    border-radius: 8px;
+    font-weight: 600;
+    transition:
+        background-color 160ms ease,
+        color 160ms ease,
+        border-color 160ms ease;
+}
+
+.ci-home-primary-button .wp-block-button__link {
+    padding: 0.9rem 1.35rem;
+    background: #176b52;
+    color: #ffffff;
+}
+
+.ci-home-primary-button .wp-block-button__link:hover {
+    background: #10533f;
+}
+
+.ci-home-section {
+    padding-block: clamp(3rem, 6vw, 5rem);
+}
+
+.ci-home-section-heading {
+    max-width: 760px;
+    margin-bottom: 2rem;
+}
+
+.ci-home-section-heading h2,
+.ci-home-about h2 {
+    color: #24332d;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.2;
+}
+
+.ci-home-section-heading > p:last-child {
+    color: #53635b;
+    line-height: 1.7;
+}
+
+.ci-home .wp-block-post-template.is-layout-grid {
+    gap: 1.5rem;
+}
+
+.ci-home .ci-material-card {
+    height: 100%;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid #e0e9e3;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 3px 12px rgba(36, 51, 45, 0.045);
+    transition:
+        box-shadow 180ms ease,
+        transform 180ms ease;
+}
+
+.ci-home .ci-material-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(36, 51, 45, 0.10);
+}
+
+.ci-home .ci-material-card > *:not(.wp-block-post-featured-image) {
+    margin-inline: 1.15rem;
+}
+
+.ci-home .ci-material-card .wp-block-post-featured-image {
+    margin: 0;
+    overflow: hidden;
+    background: #f2faf6;
+}
+
+.ci-home .ci-material-card .wp-block-post-featured-image img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.ci-home .ci-material-card .ci-material-card__type {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #176b52;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.ci-home .ci-material-card .wp-block-post-title {
+    margin-top: 0.5rem;
+    margin-bottom: 0.65rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.ci-home .ci-material-card .wp-block-post-title a {
+    color: #24332d;
+    text-decoration: none;
+}
+
+.ci-home .ci-material-card .wp-block-post-title a:hover {
+    color: #176b52;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.ci-home .ci-material-card .wp-block-post-excerpt {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+    color: #53635b;
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.ci-home .ci-home-catalog-actions {
+    margin-top: 2.5rem;
+}
+
+.ci-home .ci-home-catalog-actions .wp-block-button__link,
+.ci-home-about .wp-block-button__link {
+    padding: 0.85rem 1.25rem;
+    background: #176b52;
+    color: #ffffff;
+}
+
+.ci-home .ci-home-catalog-actions .wp-block-button__link:hover,
+.ci-home-about .wp-block-button__link:hover {
+    background: #10533f;
+}
+
+.ci-home-about {
+    box-sizing: border-box;
+    padding: clamp(3rem, 6vw, 5rem) 1.25rem;
+    background: #f3f8f5;
+    border-top: 1px solid #e0e9e3;
+}
+
+.ci-home-about > * {
+    max-width: 850px;
+    margin-inline: auto;
+}
+
+.ci-home-about p {
+    color: #40534a;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.ci-home a:focus-visible {
+    outline: 3px solid #176b52;
+    outline-offset: 4px;
+}
+
+@media (max-width: 781px) {
+    .ci-home .wp-block-post-template.is-layout-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .ci-home .ci-material-card > *:not(.wp-block-post-featured-image) {
+        margin-inline: 0.85rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .ci-home .wp-block-post-template.is-layout-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .ci-home-search .wp-block-search__inside-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .ci-home-search .wp-block-search__input {
+        flex: 1 1 100%;
+    }
+
+    .ci-home-search .wp-block-search__button {
+        flex: 0 0 auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ci-home .ci-material-card,
+    .ci-home .wp-block-button__link {
+        transition: none;
+    }
+
+    .ci-home .ci-material-card:hover {
+        transform: none;
+    }
+}
+

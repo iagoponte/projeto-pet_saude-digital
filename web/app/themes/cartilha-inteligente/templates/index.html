@@ -1,21 +1,130 @@
+
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
 
-<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
-<main class="wp-block-group">
-    <!-- wp:query-title {"type":"archive","showPrefix":false} /-->
-    <!-- wp:query {"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":true},"layout":{"type":"default"}} -->
-    <div class="wp-block-query">
-        <!-- wp:post-template -->
-            <!-- wp:post-title {"isLink":true} /-->
-            <!-- wp:post-excerpt /-->
-        <!-- /wp:post-template -->
-        <!-- wp:query-pagination -->
-            <!-- wp:query-pagination-previous /-->
-            <!-- wp:query-pagination-numbers /-->
-            <!-- wp:query-pagination-next /-->
-        <!-- /wp:query-pagination -->
+<!-- wp:group {"tagName":"main","className":"ci-home","layout":{"type":"default"}} -->
+<main class="wp-block-group ci-home">
+
+    <!-- Destaque principal -->
+    <!-- wp:group {"align":"full","className":"ci-home-hero","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull ci-home-hero">
+
+        <!-- wp:group {"className":"ci-home-hero__inner","layout":{"type":"constrained"}} -->
+        <div class="wp-block-group ci-home-hero__inner">
+
+            <!-- wp:paragraph {"className":"ci-home-eyebrow"} -->
+            <p class="ci-home-eyebrow">PORTAL DE EDUCAÇÃO EM SAÚDE</p>
+            <!-- /wp:paragraph -->
+
+            <!-- wp:heading {"level":1,"className":"ci-home-title"} -->
+            <h1 class="wp-block-heading ci-home-title">Conhecimento para cuidar melhor da saúde</h1>
+            <!-- /wp:heading -->
+
+            <!-- wp:paragraph {"className":"ci-home-description"} -->
+            <p class="ci-home-description">Explore materiais educativos sobre alimentação, saúde e qualidade de vida. Encontre cartilhas, áudios, vídeos e recursos interativos para aprender no seu ritmo.</p>
+            <!-- /wp:paragraph -->
+
+            <!-- wp:search {"label":"Buscar materiais educativos","showLabel":false,"placeholder":"O que você gostaria de aprender?","buttonText":"Buscar","buttonUseIcon":false,"className":"ci-home-search"} /-->
+
+            <!-- wp:buttons {"className":"ci-home-actions"} -->
+            <div class="wp-block-buttons ci-home-actions">
+                <!-- wp:button {"className":"ci-home-primary-button"} -->
+                <div class="wp-block-button ci-home-primary-button"><a class="wp-block-button__link wp-element-button" href="/materiais/">Explorar todos os materiais</a></div>
+                <!-- /wp:button -->
+            </div>
+            <!-- /wp:buttons -->
+
+        </div>
+        <!-- /wp:group -->
+
     </div>
-    <!-- /wp:query -->
+    <!-- /wp:group -->
+
+    <!-- Materiais recentes -->
+    <!-- wp:group {"className":"ci-home-section","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group ci-home-section">
+
+        <!-- wp:group {"className":"ci-home-section-heading","layout":{"type":"constrained"}} -->
+        <div class="wp-block-group ci-home-section-heading">
+
+            <!-- wp:paragraph {"className":"ci-home-eyebrow"} -->
+            <p class="ci-home-eyebrow">EXPLORE O CONTEÚDO</p>
+            <!-- /wp:paragraph -->
+
+            <!-- wp:heading {"level":2} -->
+            <h2 class="wp-block-heading">Materiais educativos recentes</h2>
+            <!-- /wp:heading -->
+
+            <!-- wp:paragraph -->
+            <p>Confira os conteúdos mais recentes publicados na plataforma.</p>
+            <!-- /wp:paragraph -->
+
+        </div>
+        <!-- /wp:group -->
+
+        <!-- wp:query {"query":{"perPage":6,"pages":0,"offset":0,"postType":"material_educativo","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"layout":{"type":"default"}} -->
+        <div class="wp-block-query">
+
+            <!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
+
+                <!-- wp:group {"className":"ci-material-card","layout":{"type":"constrained"}} -->
+                <div class="wp-block-group ci-material-card">
+
+                    <!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16:9","sizeSlug":"medium_large"} /-->
+
+                    <!-- wp:post-terms {"term":"tipo_material","className":"ci-material-card__type"} /-->
+
+                    <!-- wp:post-title {"level":3,"isLink":true} /-->
+
+                    <!-- wp:post-excerpt {"excerptLength":20,"moreText":"Ver material","showMoreOnNewLine":false} /-->
+
+                </div>
+                <!-- /wp:group -->
+
+            <!-- /wp:post-template -->
+
+            <!-- wp:query-no-results -->
+                <!-- wp:paragraph -->
+                <p>Em breve, novos materiais educativos estarão disponíveis. Acesse o catálogo para explorar os conteúdos publicados.</p>
+                <!-- /wp:paragraph -->
+            <!-- /wp:query-no-results -->
+
+        </div>
+        <!-- /wp:query -->
+
+        <!-- wp:buttons {"className":"ci-home-catalog-actions","layout":{"type":"flex","justifyContent":"center"}} -->
+        <div class="wp-block-buttons ci-home-catalog-actions">
+            <!-- wp:button -->
+            <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/materiais/">Ver todos os materiais</a></div>
+            <!-- /wp:button -->
+        </div>
+        <!-- /wp:buttons -->
+
+    </div>
+    <!-- /wp:group -->
+
+    <!-- Apresentação do projeto -->
+    <!-- wp:group {"align":"full","className":"ci-home-about","layout":{"type":"constrained"}} -->
+    <div class="wp-block-group alignfull ci-home-about">
+
+        <!-- wp:heading {"level":2} -->
+        <h2 class="wp-block-heading">Aprender também é cuidar</h2>
+        <!-- /wp:heading -->
+
+        <!-- wp:paragraph -->
+        <p>O Cartilha Inteligente reúne recursos educativos para facilitar o acesso à informação e incentivar escolhas mais conscientes relacionadas à saúde e à qualidade de vida.</p>
+        <!-- /wp:paragraph -->
+
+        <!-- wp:buttons -->
+        <div class="wp-block-buttons">
+            <!-- wp:button -->
+            <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/materiais/">Comece a explorar</a></div>
+            <!-- /wp:button -->
+        </div>
+        <!-- /wp:buttons -->
+
+    </div>
+    <!-- /wp:group -->
+
 </main>
 <!-- /wp:group -->
 
