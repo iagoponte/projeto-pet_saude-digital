@@ -638,3 +638,14 @@ add_shortcode(
     'ci_recurso_material',
     'ci_render_recurso_material_shortcode',
 );
+
+/**
+ * Restringe as pesquisas públicas aos materiais educativos.
+ */
+add_action('pre_get_posts', function ($query): void {
+    if (is_admin() || ! $query->is_main_query() || ! $query->is_search()) {
+        return;
+    }
+
+    $query->set('post_type', ['material_educativo']);
+});

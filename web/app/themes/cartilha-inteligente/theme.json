@@ -4,8 +4,8 @@
   "settings": {
     "appearanceTools": true,
     "layout": {
-      "contentSize": "760px",
-      "wideSize": "1200px"
+      "contentSize": "900px",
+      "wideSize": "1320px"
     },
     "color": {
       "palette": [
@@ -15,9 +15,19 @@
           "color": "#176B52"
         },
         {
+          "slug": "primary-dark",
+          "name": "Verde escuro",
+          "color": "#10533F"
+        },
+        {
           "slug": "secondary",
           "name": "Verde claro",
           "color": "#DDF3E8"
+        },
+        {
+          "slug": "surface",
+          "name": "Fundo suave",
+          "color": "#F3F8F5"
         },
         {
           "slug": "text",
@@ -25,14 +35,34 @@
           "color": "#24332D"
         },
         {
+          "slug": "muted",
+          "name": "Texto secundário",
+          "color": "#53635B"
+        },
+        {
           "slug": "background",
           "name": "Fundo",
           "color": "#FFFFFF"
+        },
+        {
+          "slug": "border",
+          "name": "Bordas",
+          "color": "#DDE7E1"
         }
       ]
     },
     "typography": {
-      "fluid": true
+      "fluid": true,
+      "fontFamilies": [
+        {
+          "fontFamily": "Arial, Helvetica, sans-serif",
+          "slug": "system",
+          "name": "Sistema"
+        }
+      ]
+    },
+    "spacing": {
+      "units": ["px", "%", "em", "rem", "vw"]
     }
   },
   "styles": {
@@ -42,7 +72,39 @@
     },
     "typography": {
       "fontFamily": "Arial, Helvetica, sans-serif",
-      "lineHeight": "1.6"
+      "fontSize": "16px",
+      "lineHeight": "1.7"
+    },
+    "elements": {
+      "heading": {
+        "color": {
+          "text": "#24332D"
+        },
+        "typography": {
+          "fontWeight": "700",
+          "lineHeight": "1.25"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "#176B52"
+        }
+      },
+      "button": {
+        "color": {
+          "background": "#176B52",
+          "text": "#FFFFFF"
+        },
+        "border": {
+          "radius": "8px"
+        },
+        "typography": {
+          "fontWeight": "600"
+        }
+      }
+    },
+    "spacing": {
+      "blockGap": "1.5rem"
     }
   }
 }

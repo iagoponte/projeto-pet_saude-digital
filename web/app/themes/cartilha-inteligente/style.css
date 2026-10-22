@@ -436,3 +436,498 @@ Text Domain: cartilha-inteligente
     }
 }
 
+
+/* =========================================================
+   Cartilha Inteligente — identidade visual global
+   ========================================================= */
+
+:root {
+    --ci-primary: #176B52;
+    --ci-primary-dark: #10533F;
+    --ci-secondary: #DDF3E8;
+    --ci-surface: #F3F8F5;
+    --ci-text: #24332D;
+    --ci-muted: #53635B;
+    --ci-border: #DDE7E1;
+    --ci-white: #FFFFFF;
+    --ci-radius: 12px;
+    --ci-shadow: 0 4px 18px rgba(36, 51, 45, 0.06);
+}
+
+/* Modelo de caixa consistente e prevenção de overflow horizontal */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 1.5rem;
+}
+
+body {
+    margin: 0;
+    color: var(--ci-text);
+    background: var(--ci-white);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+video,
+iframe,
+embed,
+object {
+    max-width: 100%;
+}
+
+.wp-site-blocks {
+    min-width: 0;
+}
+
+/* Links acessíveis */
+a {
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+}
+
+a:hover {
+    text-decoration-thickness: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.wp-block-button__link:focus-visible {
+    outline: 3px solid #287D60;
+    outline-offset: 3px;
+}
+
+/* Cabeçalho global */
+.ci-site-header {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    background: var(--ci-primary);
+    color: var(--ci-white);
+    border-bottom: 4px solid var(--ci-secondary);
+}
+
+.ci-site-header__inner {
+    display: flex;
+    width: 100%;
+    max-width: 1320px;
+    margin-inline: auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem 2rem;
+}
+
+.ci-site-brand {
+    min-width: 0;
+    max-width: 100%;
+}
+
+.ci-site-header .wp-block-site-title {
+    margin: 0;
+    font-size: clamp(1.35rem, 2.5vw, 1.8rem) !important;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.ci-site-header .wp-block-site-title a,
+.ci-site-header .wp-block-site-title a:hover {
+    color: var(--ci-white);
+    text-decoration: none;
+}
+
+.ci-site-header .wp-block-site-tagline {
+    margin-block: 0.4rem 0;
+    color: #E3F4EC;
+    font-size: 0.9rem !important;
+    line-height: 1.5;
+}
+
+.ci-site-header .wp-block-navigation {
+    min-width: 0;
+    color: var(--ci-white);
+}
+
+.ci-site-header .wp-block-navigation__container {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.ci-site-header .wp-block-navigation-item__content {
+    padding: 0.55rem 0.8rem;
+    border-radius: 7px;
+    color: var(--ci-white);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 160ms ease;
+}
+
+.ci-site-header .wp-block-navigation-item__content:hover,
+.ci-site-header .wp-block-navigation-item__content:focus-visible {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--ci-white);
+}
+
+.ci-site-header .wp-block-navigation__responsive-container-open,
+.ci-site-header .wp-block-navigation__responsive-container-close {
+    color: var(--ci-white);
+}
+
+.ci-site-header .wp-block-navigation__responsive-container.is-menu-open {
+    padding: 1.5rem;
+    background: var(--ci-primary-dark);
+    color: var(--ci-white);
+}
+
+.ci-site-header .wp-block-navigation__responsive-container.is-menu-open
+.wp-block-navigation-item__content {
+    color: var(--ci-white);
+}
+
+/* Área principal: largura ampla sem forçar textos a ocupar a tela inteira */
+.wp-site-blocks main {
+    min-width: 0;
+}
+
+.wp-site-blocks main > .wp-block-group.alignfull {
+    width: 100%;
+    max-width: none;
+}
+
+.wp-block-post-content,
+.material-educativo__conteudo {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.wp-block-post-content > *,
+.material-educativo__conteudo > * {
+    max-width: 100%;
+}
+
+.wp-block-post-content p,
+.material-educativo__conteudo p {
+    line-height: 1.8;
+}
+
+/* Títulos e hierarquia visual */
+main h1,
+main h2,
+main h3,
+main h4 {
+    color: var(--ci-text);
+    text-wrap: balance;
+}
+
+main h1 {
+    line-height: 1.2;
+}
+
+main h2 {
+    line-height: 1.3;
+}
+
+main h3 {
+    line-height: 1.4;
+}
+
+/* Botões globais */
+.wp-site-blocks .wp-block-button__link,
+.wp-site-blocks .wp-block-search__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    max-width: 100%;
+    padding: 0.75rem 1.2rem;
+    border: 1px solid var(--ci-primary);
+    border-radius: 8px;
+    background: var(--ci-primary);
+    color: var(--ci-white);
+    font: inherit;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+    transition:
+        background-color 160ms ease,
+        border-color 160ms ease;
+}
+
+.wp-site-blocks .wp-block-button__link:hover,
+.wp-site-blocks .wp-block-search__button:hover {
+    border-color: var(--ci-primary-dark);
+    background: var(--ci-primary-dark);
+    color: var(--ci-white);
+}
+
+/* Campos de pesquisa e formulários */
+.wp-site-blocks input[type="search"],
+.wp-site-blocks input[type="text"],
+.wp-site-blocks input[type="email"],
+.wp-site-blocks input[type="url"],
+.wp-site-blocks textarea,
+.wp-site-blocks select {
+    max-width: 100%;
+    min-height: 44px;
+    padding: 0.7rem 0.85rem;
+    border: 1px solid #B7D6C8;
+    border-radius: 8px;
+    background: var(--ci-white);
+    color: var(--ci-text);
+    font: inherit;
+}
+
+.wp-site-blocks input::placeholder,
+.wp-site-blocks textarea::placeholder {
+    color: #66776E;
+    opacity: 1;
+}
+
+/* Catálogo e cartões de materiais */
+.wp-block-post-template.is-layout-grid {
+    align-items: stretch;
+    column-gap: clamp(1rem, 2vw, 1.5rem);
+    row-gap: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.wp-block-post-template > li {
+    min-width: 0;
+}
+
+.wp-block-post-template > li > .ci-material-card,
+.wp-block-post-template > li > .wp-block-group.ci-material-card {
+    height: 100%;
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid var(--ci-border);
+    border-radius: var(--ci-radius);
+    background: var(--ci-white);
+    box-shadow: var(--ci-shadow);
+}
+
+.wp-block-post-template > li .wp-block-post-featured-image {
+    margin: 0;
+    overflow: hidden;
+    background: var(--ci-surface);
+}
+
+.wp-block-post-template > li .wp-block-post-featured-image img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.wp-block-post-template > li .wp-block-post-title a {
+    color: var(--ci-text);
+    text-decoration: none;
+}
+
+.wp-block-post-template > li .wp-block-post-title a:hover {
+    color: var(--ci-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.wp-block-post-template > li .wp-block-post-terms a {
+    color: var(--ci-primary);
+    font-weight: 600;
+}
+
+.wp-block-post-template > li .wp-block-post-excerpt {
+    color: var(--ci-muted);
+    line-height: 1.65;
+}
+
+/* Paginação do catálogo */
+.wp-block-query-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    margin-top: 2.5rem;
+}
+
+.wp-block-query-pagination a,
+.wp-block-query-pagination .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    min-height: 42px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--ci-border);
+    border-radius: 7px;
+    color: var(--ci-primary);
+    text-decoration: none;
+}
+
+.wp-block-query-pagination a:hover,
+.wp-block-query-pagination .current {
+    background: var(--ci-primary);
+    color: var(--ci-white);
+}
+
+/* Página individual do material */
+.material-educativo__conteudo {
+    margin-top: 2rem;
+}
+
+.ci-recurso-material {
+    padding: clamp(1rem, 3vw, 2rem);
+    border: 1px solid var(--ci-border);
+    border-radius: var(--ci-radius);
+    background: var(--ci-surface);
+}
+
+.ci-recurso-material iframe,
+.ci-recurso-material video {
+    border-radius: 8px;
+}
+
+.ci-transcricao {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--ci-border);
+    border-radius: 8px;
+    background: var(--ci-white);
+}
+
+/* Rodapé global */
+.ci-site-footer {
+    width: 100%;
+    margin-top: 0;
+    border-top: 4px solid var(--ci-secondary);
+    background: #173F33;
+    color: #F3F8F5;
+}
+
+.ci-site-footer__inner {
+    width: 100%;
+    max-width: 1320px;
+    margin-inline: auto;
+}
+
+.ci-site-footer .wp-block-site-title {
+    margin: 0 0 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+.ci-site-footer .wp-block-site-title a {
+    color: var(--ci-white);
+    text-decoration: none;
+}
+
+.ci-site-footer__description {
+    max-width: 680px;
+    margin-block: 0 1.5rem;
+    color: #E0EEE7;
+}
+
+.ci-site-footer__copyright {
+    margin-block: 1.25rem 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: #D4E5DC;
+    font-size: 0.9rem;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .ci-site-header__inner {
+        gap: 1rem;
+    }
+
+    .ci-site-header .wp-block-navigation {
+        max-width: 100%;
+    }
+
+    .wp-block-post-template.is-layout-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    .ci-site-header {
+        padding-inline: 16px !important;
+        padding-block: 16px !important;
+    }
+
+    .ci-site-header__inner {
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .ci-site-brand {
+        flex: 1 1 180px;
+    }
+
+    .ci-site-header .wp-block-site-title {
+        font-size: 1.4rem !important;
+    }
+
+    .ci-site-header .wp-block-site-tagline {
+        font-size: 0.82rem !important;
+    }
+
+    .ci-site-header .wp-block-navigation {
+        max-width: 100%;
+    }
+
+    .wp-block-post-template.is-layout-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .wp-site-blocks .wp-block-button,
+    .wp-site-blocks .wp-block-button__link {
+        max-width: 100%;
+    }
+
+    .wp-site-blocks .wp-block-buttons {
+        gap: 0.75rem;
+    }
+
+    .wp-block-query-pagination {
+        gap: 0.4rem;
+    }
+
+    .ci-site-footer {
+        padding-inline: 20px !important;
+    }
+
+    .ci-recurso-material {
+        padding: 1rem;
+    }
+
+    .ci-recurso-material iframe {
+        min-height: 220px;
+    }
+}
+
+/* Respeita a preferência do usuário por menos movimento */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
