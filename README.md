@@ -185,8 +185,14 @@ cartilha-inteligente/
 │   ├── app/
 │   │   ├── mu-plugins/         # Funcionalidades personalizadas
 │   │   ├── themes/
-│   │   │   └── cartilha-inteligente/
-│   │   │                         # Tema próprio
+│   │   │   └── cartilha-inteligente/   # Tema próprio
+│   │   │       ├── parts/
+│   │           │   ├── header.html
+│   │           │   └── footer.html
+│   │           ├── templates/
+│   │           │   └── search.html
+│   │           ├── style.css
+│   │           └── theme.json                   
 │   │   └── uploads/            # Arquivos enviados ao WordPress
 │   ├── wp/                     # WordPress Core gerenciado pelo Composer
 │   └── wp-config.php           # Configuração de entrada do Bedrock
